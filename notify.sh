@@ -50,7 +50,7 @@ encrypt () {
 	# Second argument is IV
 	# Third argument is data
 
-	echo -n "${3}" | openssl aes-128-cbc -base64 -K "${1}" -iv "${2}" | awk '{print}' ORS='' | tr '+' '-' | tr '/' '_'
+	echo -n "${3}" | openssl aes-128-cbc -base64 -K "${1}" -iv "${2}" | awk '{print}' ORS='' | tr '+/' '-_'
 }
 
 run_command() {
